@@ -145,7 +145,6 @@ class Bullet //majkrem in reality :D
               bullets.splice(index, 1);
             }
 
-            console.log(bullets);
             return;
         }
 
@@ -308,11 +307,10 @@ function loadingAnimation()
 	
 	let p = frameCnt/100;
 	p=round(p,5);
-	console.log(p);
 	p=0.5*(Math.sin(p*Math.PI*2)+1); // pulse between 0 and 1
-	console.log(p);
+
 	let alpha = clampMe(EasingFunctions.easeInCubic(p), 0.0, 0.6);
-	console.log(`alpha ${alpha}`);
+
 	ctx.fillStyle = `rgba(255,255,255,${alpha})`;   // these are called template strings
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
@@ -324,11 +322,11 @@ function overlayAnimation()
 	
 	let p = frameCnt/100;
 	p=round(p,5);
-	console.log(p);
+
 	p=0.5*(Math.cos(p*Math.PI)+1); // pulse between 0 and 1
-	console.log(p);
+
 	let alpha = clampMe(EasingFunctions.easeInCubic(p), 0.0, 0.9);
-	console.log(`alpha ${alpha}`);
+
 	ctx.fillStyle = `rgba(240,240,240,${alpha})`;   // these are called template strings
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	
@@ -341,11 +339,11 @@ function overlayAnimDeath()
 
     let p = frameCnt/50;
     p=round(p,5);
-    console.log(p);
+   
     p=0.5*(Math.cos(p*Math.PI)+1); // pulse between 0 and 1
-    console.log(p);
+   
     let alpha = clampMe(EasingFunctions.easeInCubic(p), 0.0, 0.9);
-    console.log(`alpha ${alpha}`);
+   
     ctx.fillStyle = `rgba(240,0,0,${alpha})`;   // these are called template strings
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -410,7 +408,7 @@ function gameLoop(currentTime) {
 	clearCanvas();
 	if(assetCnt!=0 || frameCnt < 100) 
 	{
-		console.log('still loading');
+	//	console.log('still loading');
 		loadingAnimation();
 		lastTime = currentTime;
 		frameCnt++;

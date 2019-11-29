@@ -89,10 +89,10 @@ function loadMoveAnim(name, no_of_frames)
 		animFrames.idle=[];
 		//animFrames.idle.push(loadImg(`../../assets/img/${name}.png`));
 		for (var i=1; i<no_of_frames+1; i++){
-			animFrames.idle.push(loadImg(`../../assets/img/${name}_s${i}.png`));
+			animFrames.idle.push(loadImg(`assets/img/${name}_s${i}.png`));
 		}
 		for (var i=1; i<no_of_frames+1; i++){
-			animFrames.running.push(loadImg(`../../assets/img/${name}_m${i}.png`));
+			animFrames.running.push(loadImg(`assets/img/${name}_m${i}.png`));
 		}
 		return animFrames;
 }
