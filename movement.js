@@ -3,6 +3,8 @@ var spawnCnt =0;
 var isDead = false;
 var majkremImg = loadImg("assets/img/majkrem_small.png");
 
+mobileFullscreen();
+
 class BgElem{
     constructor(width, height){
         this.height = height;

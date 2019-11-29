@@ -42,6 +42,28 @@ function loadImg(path){
 	return img;
 }
 
+function mobileFullscreen()
+{
+	var canvas = document.getElementById("gamearea");
+    const isMobileDevice = window.navigator.userAgent.toLowerCase().includes("mobi");
+    if (isMobileDevice)
+    {
+        function launchIntoFullscreen(element) {
+        if(element.requestFullscreen) {
+              element.requestFullscreen();
+            } else if(element.mozRequestFullScreen) {
+              element.mozRequestFullScreen();
+            } else if(element.webkitRequestFullscreen) {
+                element.webkitRequestFullscreen();
+            } else if(element.msRequestFullscreen) {
+                element.msRequestFullscreen();
+            }
+        }
+
+        launchIntoFullscreen(canvas);
+    }
+}
+
 function clearCanvas()
 {
 	var canvas = document.getElementById("gamearea");
